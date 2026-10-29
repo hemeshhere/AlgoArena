@@ -4,14 +4,15 @@
 //
 //  Created by Hemesh Raj on 22/10/26.
 //
+
 import Foundation
 
-struct TriviaResponse: Codable {
+struct TriviaResponse: Codable, Sendable {
     let response_code: Int
     let results: [Question]
 }
 
-struct Question: Codable {
+struct Question: Codable, Sendable {
     let category: String
     let difficulty: String
     let question: String
@@ -25,4 +26,3 @@ struct Question: Codable {
         return all.shuffled()
     }
 }
-
